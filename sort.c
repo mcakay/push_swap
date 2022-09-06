@@ -40,20 +40,6 @@ void	ft_recursive_push_b(t_stack **stack_a, t_stack  **stack_b, int *i)
 	ft_recursive_push_b(stack_a, stack_b, i);
 }
 
-void	ft_push_a(t_stack **stack_a, t_stack **stack_b, int *i)
-{
-	int max;
-	if (*i == 80)
-		return ;
-	max = ft_max(stack_b);
-	if ((*stack_b)->index == max)
-		ft_push(stack_a, stack_b, "pa\n");
-	else
-		ft_better_rotate3(stack_b, max);
-	(*i)--;
-	ft_push_a(stack_a, stack_b, i);
-}
-
 void	ft_recursive_push_a(t_stack **stack_a, t_stack  **stack_b)
 {
 
@@ -72,7 +58,7 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 	int i;
 	int	size;
 
-	i = 20;
+	i = 19;
 	ft_recursive_push_b(stack_a, stack_b, &i);
 	size = ft_size(stack_b);
 	ft_recursive_push_a(stack_a, stack_b);

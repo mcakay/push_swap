@@ -6,7 +6,7 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 06:03:21 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/06 03:09:08 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/06 17:23:54 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ft_better_rotate(t_stack **stack_a, t_stack **stack_b, int index)
 	{
 		if (curr->index <= index)
 		{
-			if (*stack_b && (*stack_b)->index != ft_max(stack_b))
+			if (*stack_b && (*stack_b)->index != ft_max(stack_b) && (*stack_b)->index < ft_max(stack_b) - 5)
 			{
 				if (ft_better_rotate2(stack_b, ft_max(stack_b)) == -1)
 				{
@@ -83,7 +83,7 @@ void	ft_better_rotate(t_stack **stack_a, t_stack **stack_b, int index)
 	{
 		if (curr->index <= index)
 		{
-			if (*stack_b && (*stack_b)->index != ft_max(stack_b))
+			if (*stack_b && (*stack_b)->index != ft_max(stack_b) && (*stack_b)->index < ft_max(stack_b) - 5)
 			{
 				if (ft_better_rotate2(stack_b, ft_max(stack_b)) == 1)
 				{
