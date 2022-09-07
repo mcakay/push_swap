@@ -6,7 +6,7 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 21:51:23 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/06 02:47:15 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/07 19:02:27 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	check_numbers(t_stack **root, long num)
 {
-	t_stack *curr;
-	
+	t_stack	*curr;
+
 	curr = *root;
 	if (num > 2147483647 || num < -2147483648)
 		ft_error();

@@ -6,15 +6,15 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 15:12:19 by mcakay            #+#    #+#             */
-/*   Updated: 2022/08/31 16:24:43 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/07 19:15:26 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_index(t_stack **root)
+static int	ft_find_min(t_stack **root)
 {
-	t_stack *curr;
+	t_stack	*curr;
 	int		i;
 	int		size;
 	int		min;
@@ -31,15 +31,26 @@ void	ft_index(t_stack **root)
 				min = curr->number;
 			curr = curr->next;
 		}
-		curr = *root;
-		while (curr)
+	}
+	return (min);
+}
+
+void	ft_index(t_stack **root)
+{
+	t_stack	*curr;
+	int		min;
+	int		i;
+
+	i = 0;
+	min = ft_find_min(root);
+	curr = *root;
+	while (curr)
+	{
+		if (curr->number == min)
 		{
-			if  (curr->number == min)
-			{
-				curr->index = i;
-				i++;
-			}
-			curr = curr->next;
+			curr->index = i;
+			i++;
 		}
+		curr = curr->next;
 	}
 }

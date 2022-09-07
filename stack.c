@@ -6,7 +6,7 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 21:51:20 by mcakay            #+#    #+#             */
-/*   Updated: 2022/08/31 16:32:33 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/07 19:16:23 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_stack	*ft_create_node(int num, int index)
 
 void	ft_add_node(t_stack **root, int num, int index)
 {
-	t_stack *curr;
+	t_stack	*curr;
 
 	if (*root == NULL)
 	{
@@ -51,7 +51,7 @@ void	ft_add_node(t_stack **root, int num, int index)
 
 t_stack	*ft_last_node(t_stack **root)
 {
-	t_stack *curr;
+	t_stack	*curr;
 
 	curr = *root;
 	while (curr->next->next)

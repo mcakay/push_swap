@@ -6,7 +6,7 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 01:09:45 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/03 13:37:18 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/07 19:16:40 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ long	ft_atol(char *str)
 	int		sign;
 	int		i;
 	long	num;
-	
+
 	sign = 1;
 	i = 0;
 	num = 0;
