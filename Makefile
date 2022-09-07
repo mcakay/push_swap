@@ -1,7 +1,7 @@
 NAME = push_swap
 
 SRCS = push_swap.c stack.c get_numbers.c utils.c swap.c push.c\
-rotate.c sort.c index.c sort_utils.c test.c
+rotate.c sort.c index.c sort_utils.c better_rotate.c optimize.c
 
 LIBFT = ./ft_printf/libftprintf.a
 
