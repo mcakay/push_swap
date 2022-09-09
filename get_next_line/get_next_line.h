@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 06:03:27 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/09 19:29:17 by mcakay           ###   ########.fr       */
+/*   Created: 2022/07/28 04:27:54 by mcakay            #+#    #+#             */
+/*   Updated: 2022/09/09 17:48:53 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	ft_push(t_stack **dest, t_stack **src, const char *print)
-{
-	t_stack	*tmp;
-	t_stack	*push;
+# include <unistd.h>
+# include <stdlib.h>
 
-	if (*src == NULL)
-		return ;
-	push = ft_create_node((*src)->number, (*src)->index);
-	tmp = (*src)->next;
-	free(*src);
-	*src = tmp;
-	ft_stackadd_front(dest, push);
-	ft_printf(print);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 45
+# endif
+
+int		ft_n(char *s1);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+int		ft_strlen_gnl(char *str);
+char	*ft_get_line(char *str);
+char	*ft_update_str(char *str);
+char	*get_next_line(int fd);
+#endif

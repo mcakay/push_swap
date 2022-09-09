@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   swap_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 06:03:27 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/09 19:29:17 by mcakay           ###   ########.fr       */
+/*   Created: 2022/09/09 12:56:59 by mcakay            #+#    #+#             */
+/*   Updated: 2022/09/09 19:27:38 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-void	ft_push(t_stack **dest, t_stack **src, const char *print)
+void	ft_swap(t_stack **root)
 {
-	t_stack	*tmp;
-	t_stack	*push;
+	int	temp;
+	int	index;
 
-	if (*src == NULL)
+	if (*root == NULL || (*root)->next == NULL)
 		return ;
-	push = ft_create_node((*src)->number, (*src)->index);
-	tmp = (*src)->next;
-	free(*src);
-	*src = tmp;
-	ft_stackadd_front(dest, push);
-	ft_printf(print);
+	temp = (*root)->number;
+	index = (*root)->index;
+	(*root)->number = (*root)->next->number;
+	(*root)->next->number = temp;
+	(*root)->index = (*root)->next->index;
+	(*root)->next->index = index;
+}
+
+void	ft_ss(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_swap(stack_a);
+	ft_swap(stack_b);
 }

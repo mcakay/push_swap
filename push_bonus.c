@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   push_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 06:03:27 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/09 19:29:17 by mcakay           ###   ########.fr       */
+/*   Created: 2022/09/09 12:58:54 by mcakay            #+#    #+#             */
+/*   Updated: 2022/09/09 19:28:50 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-void	ft_push(t_stack **dest, t_stack **src, const char *print)
+void	ft_push(t_stack **dest, t_stack **src)
 {
 	t_stack	*tmp;
 	t_stack	*push;
@@ -24,5 +24,4 @@ void	ft_push(t_stack **dest, t_stack **src, const char *print)
 	free(*src);
 	*src = tmp;
 	ft_stackadd_front(dest, push);
-	ft_printf(print);
 }
