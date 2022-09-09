@@ -6,7 +6,11 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 22:59:54 by mcakay            #+#    #+#             */
+<<<<<<< HEAD
+/*   Updated: 2022/09/09 20:38:51 by mcakay           ###   ########.fr       */
+=======
 /*   Updated: 2022/09/09 16:46:28 by mcakay           ###   ########.fr       */
+>>>>>>> f3ac398a530a3c98873ff557b989b9a69394b98f
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +19,11 @@
 static void	ft_less_5(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_is_sorted(stack_a) && stack_b == NULL)
+<<<<<<< HEAD
+		return ;
+=======
 				return ;
+>>>>>>> f3ac398a530a3c98873ff557b989b9a69394b98f
 	if ((*stack_a)->index > (*stack_a)->next->index)
 	{
 		ft_swap(stack_a, "sa\n");
@@ -38,6 +46,16 @@ static void	ft_less_5(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
+<<<<<<< HEAD
+static void	ft_min_rotate(t_stack **stack_a, int index)
+{
+	t_stack	*curr;
+	int		i;
+
+	i = 0;
+	curr = *stack_a;
+	while (i < ft_size(stack_a) / 2)
+=======
 static void ft_min_rotate(t_stack **stack_a, int index)
 {
 	t_stack *curr;
@@ -48,6 +66,7 @@ static void ft_min_rotate(t_stack **stack_a, int index)
 	i = 0;
 	curr = *stack_a;
 	while (i < size / 2)
+>>>>>>> f3ac398a530a3c98873ff557b989b9a69394b98f
 	{
 		if (curr->index == index)
 		{
@@ -57,7 +76,11 @@ static void ft_min_rotate(t_stack **stack_a, int index)
 		i++;
 		curr = curr->next;
 	}
+<<<<<<< HEAD
+	while (i < ft_size(stack_a))
+=======
 	while (i < size)
+>>>>>>> f3ac398a530a3c98873ff557b989b9a69394b98f
 	{
 		if (curr->index == index)
 		{
@@ -88,4 +111,8 @@ void	ft_min_sort(t_stack **stack_a, t_stack **stack_b)
 		while (stack_b != NULL)
 			ft_push(stack_a, stack_b, "pa\n");
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f3ac398a530a3c98873ff557b989b9a69394b98f

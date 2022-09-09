@@ -17,7 +17,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRCS)
 	@make bonus -C ./ft_printf
 	@$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
 
@@ -32,7 +32,11 @@ re: fclean all
 
 bonus: $(BONUS)
 
+<<<<<<< HEAD
+$(BONUS): $(BONUS_SRCS)
+=======
 $(BONUS):
+>>>>>>> f3ac398a530a3c98873ff557b989b9a69394b98f
 	@make bonus -C ./ft_printf
 	@$(CC) $(CFLAGS) $(BONUS_SRCS) $(LIBFT) -o $(BONUS)
 

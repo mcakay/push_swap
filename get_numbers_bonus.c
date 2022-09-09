@@ -6,7 +6,11 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 12:45:20 by mcakay            #+#    #+#             */
+<<<<<<< HEAD
+/*   Updated: 2022/09/09 20:38:56 by mcakay           ###   ########.fr       */
+=======
 /*   Updated: 2022/09/09 12:45:46 by mcakay           ###   ########.fr       */
+>>>>>>> f3ac398a530a3c98873ff557b989b9a69394b98f
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +59,8 @@ void	ft_get_numbers(int argc, char **argv, t_stack **root)
 		ft_deallocate(strs);
 		i++;
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f3ac398a530a3c98873ff557b989b9a69394b98f
