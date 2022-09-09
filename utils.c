@@ -6,7 +6,7 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 01:09:45 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/07 19:16:40 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/08 04:26:51 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,13 @@ long	ft_atol(char *str)
 		num = (num * 10) + (*(str + i) - 48);
 		i++;
 	}
+	if (*(str + i))
+		ft_error();
 	return (num * sign);
 }
 
 void	ft_error(void)
 {
-	ft_printf("Error!\n");
+	write(2, "Error\n", 6);
 	exit(1);
 }

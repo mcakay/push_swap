@@ -6,7 +6,7 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 19:09:07 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/07 19:12:12 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/09 16:54:19 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	ft_recursive_push_b(t_stack **stack_a,
 	chunk = sort->chunk_start;
 	if (a == sort->chunk_start)
 		sort->chunk_start += sort->chunk_add;
-	if ((*stack_a)->index <= chunk)
+	if ((*stack_a)->index <= chunk && (*stack_a)->index != ft_max(stack_a))
 	{
 		ft_push(stack_b, stack_a, "pb\n");
 		a++;
@@ -54,7 +54,7 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 	sort = malloc(sizeof(sort));
 	if (!sort)
 		return ;
-	ft_optimize(stack_a, sort);
+	ft_optimize(stack_a, stack_b, sort);
 	ft_recursive_push_b(stack_a, stack_b, sort);
 	ft_recursive_push_a(stack_a, stack_b, sort);
 	while (ft_last_node(stack_a)->next->index != ft_max(stack_a))

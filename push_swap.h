@@ -6,7 +6,7 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 21:51:27 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/07 19:25:44 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/08 06:54:58 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_sort
 
 int		ft_size(t_stack **root);
 int		ft_max(t_stack **root);
+int		ft_min(t_stack **root);
 int		ft_is_sorted(t_stack **root);
 int		ft_closest(t_stack **root, int index);
 void	ft_index(t_stack **root);
@@ -53,6 +54,7 @@ void	ft_better_rotate(t_stack **stack_a,
 void	ft_rotate_closest(t_stack **stack_a, t_stack **stack_b, int index);
 void	ft_deallocate(char **strs);
 void	ft_error(void);
-void	ft_optimize(t_stack **stack_a, t_sort *sort);
+void	ft_optimize(t_stack **stack_a, t_stack **stack_b, t_sort *sort);
+void	ft_min_sort(t_stack **stack_a, t_stack **stack_b);
 
 #endif

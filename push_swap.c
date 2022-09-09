@@ -6,7 +6,7 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 21:51:25 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/07 19:08:27 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/07 21:39:16 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 
 	if (argc < 2)
-		ft_error();
+		exit(1);
 	ft_get_numbers(argc, argv, &stack_a);
 	ft_index(&stack_a);
 	if (ft_is_sorted(&stack_a))

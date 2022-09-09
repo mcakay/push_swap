@@ -6,7 +6,7 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 19:22:27 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/07 19:16:03 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/08 06:38:16 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,22 @@ int	ft_max(t_stack **root)
 		curr = curr->next;
 	}
 	return (max);
+}
+
+int	ft_min(t_stack **root)
+{
+	t_stack	*curr;
+	int		min;
+
+	curr = *root;
+	min = 2147483647;
+	while (curr)
+	{
+		if (curr->index < min)
+			min = curr->index;
+		curr = curr->next;
+	}
+	return (min);
 }
 
 int	ft_closest(t_stack **root, int index)

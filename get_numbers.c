@@ -6,7 +6,7 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 21:51:23 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/07 19:02:27 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/07 21:36:25 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ static void	ft_get_number(long num, t_stack **root)
 	if (!check_numbers(root, num))
 		ft_add_node(root, num, 0);
 	else
-	{
-		ft_printf("Error!\n");
-		exit(1);
-	}
+		ft_error();
 }
 
 void	ft_get_numbers(int argc, char **argv, t_stack **root)
