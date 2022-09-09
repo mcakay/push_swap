@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 21:51:25 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/09 21:12:52 by mcakay           ###   ########.fr       */
+/*   Created: 2022/08/30 06:03:35 by mcakay            #+#    #+#             */
+/*   Updated: 2022/09/09 19:26:54 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_swap(t_stack **root, const char *print)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	int	temp;
+	int	index;
 
-	if (argc < 2)
-		exit(1);
-	ft_get_numbers(argc, argv, &stack_a);
-	ft_index(&stack_a);
-	if (ft_is_sorted(&stack_a))
-		exit(1);
-	ft_sort(&stack_a, &stack_b);
-	return (0);
+	if (*root == NULL || (*root)->next == NULL)
+		return ;
+	temp = (*root)->number;
+	index = (*root)->index;
+	(*root)->number = (*root)->next->number;
+	(*root)->next->number = temp;
+	(*root)->index = (*root)->next->index;
+	(*root)->next->index = index;
+	ft_printf(print);
 }

@@ -7,7 +7,6 @@ srcb/ft_printf_bonus.c srcb/ft_put_bonus.c srcb/ft_reset_print_bonus.c\
 srcb/ft_return_bonus.c srcb/ft_sharp_flag_bonus.c srcb/ft_space_flag_bonus.c\
 srcb/ft_utils_bonus.c srcb/ft_width_flag_bonus.c srcb/ft_zero_flag_bonus.c
 
-
 BONUS_OBJS= $(BONUS_SRCS:.c=.o)
 
 CC=gcc
@@ -15,8 +14,6 @@ CC=gcc
 RM= rm -rf
 
 CFLAGS= -Wall -Werror -Wextra
-
-all: $(NAME)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
