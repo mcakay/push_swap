@@ -6,35 +6,50 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 22:59:54 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/09 20:49:52 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/10 03:35:49 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_less_5(t_stack **stack_a, t_stack **stack_b)
+static void	ft_rs(t_stack **stack_a)
 {
-	if (ft_is_sorted(stack_a) && stack_b == NULL)
-		return ;
-	if ((*stack_a)->index > (*stack_a)->next->index)
+	ft_rev_rotate(stack_a, "rra\n");
+	ft_swap(stack_a, "sa\n");
+}
+
+static void	ft_sr(t_stack **stack_a)
+{
+	ft_swap(stack_a, "sa\n");
+	ft_rev_rotate(stack_a, "rra\n");
+}
+
+static void	ft_less_5(t_stack **stack_a)
+{
+	if ((*stack_a)->index > (*stack_a)->next->index
+		&& (*stack_a)->index > (*stack_a)->next->next->index)
 	{
-		ft_swap(stack_a, "sa\n");
-		if (ft_is_sorted(stack_a))
-			return ;
-		else
+		if ((*stack_a)->next->index < (*stack_a)->next->next->index)
+		{
 			ft_rev_rotate(stack_a, "rra\n");
-		if (!ft_is_sorted(stack_a))
-			ft_min_sort(stack_a, stack_b);
+			ft_rev_rotate(stack_a, "rra\n");
+		}
+		else
+			ft_sr(stack_a);
 	}
-	else
+	else if ((*stack_a)->next->index > (*stack_a)->index
+		&& (*stack_a)->next->index > (*stack_a)->next->next->index)
 	{
-		ft_rev_rotate(stack_a, "rra\n");
-		if (ft_is_sorted(stack_a))
-			return ;
-		if ((*stack_a)->index > (*stack_a)->next->index)
-			ft_swap(stack_a, "sa\n");
-		else
+		if ((*stack_a)->index > (*stack_a)->next->next->index)
 			ft_rev_rotate(stack_a, "rra\n");
+		else
+			ft_rs(stack_a);
+	}
+	else if ((*stack_a)->next->next->index > (*stack_a)->next->index
+		&& (*stack_a)->next->next->index > (*stack_a)->index)
+	{
+		if ((*stack_a)->next->index < (*stack_a)->index)
+			ft_swap(stack_a, "sa\n");
 	}
 }
 
@@ -72,7 +87,7 @@ void	ft_min_sort(t_stack **stack_a, t_stack **stack_b)
 	if (ft_size(stack_a) == 2)
 		ft_swap(stack_a, "sa\n");
 	else if (ft_size(stack_a) == 3)
-		ft_less_5(stack_a, stack_b);
+		ft_less_5(stack_a);
 	else if (ft_size(stack_a) <= 5)
 	{
 		while (ft_size(stack_a) != 3)
@@ -83,7 +98,7 @@ void	ft_min_sort(t_stack **stack_a, t_stack **stack_b)
 				ft_min_rotate(stack_a, ft_min(stack_a));
 		}
 		ft_min_sort(stack_a, stack_b);
-		while (stack_b != NULL)
+		while (*stack_b != NULL)
 			ft_push(stack_a, stack_b, "pa\n");
 	}
 }

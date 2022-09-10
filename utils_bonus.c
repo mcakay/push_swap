@@ -6,7 +6,7 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 12:45:59 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/09 17:52:42 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/10 02:53:35 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ static void	ft_check(char *str)
 	while (*(str + i))
 	{
 		if (ft_isalpha(*(str + i)))
-		{
-			ft_printf("Error!\n");
-			exit(1);
-		}
+			ft_error();
 		i++;
 	}
 }
