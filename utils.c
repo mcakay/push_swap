@@ -6,7 +6,7 @@
 /*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 01:09:45 by mcakay            #+#    #+#             */
-/*   Updated: 2022/09/10 02:53:20 by mcakay           ###   ########.fr       */
+/*   Updated: 2022/09/12 00:18:35 by mcakay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,13 @@ long	ft_atol(char *str)
 	{
 		if (*(str + i) == '-')
 			sign = -sign;
+		if (!ft_isdigit(*(str + i + 1)))
+			ft_error();
 		i++;
 	}
-	while (ft_isdigit(*(str + i)))
-	{
+	i--;
+	while (ft_isdigit(*(str + ++i)))
 		num = (num * 10) + (*(str + i) - 48);
-		i++;
-	}
 	if (*(str + i))
 		ft_error();
 	return (num * sign);
